@@ -1,8 +1,8 @@
-# 2025/2026: 5. Streaming Data Prep in EPL
+# 2025/2026: 5. Streaming Data Prep in EPL - Bike Sharing and Dutch Energy Generation
 
 Optional project of the [Streaming Data Analytics](https://emanueledellavalle.org/teaching/streaming-data-analytics-2025-26/) course provided by [Politecnico di Milano](https://www11.ceda.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=837284&__pj0=0&__pj1=36cd41e96fcd065c47b49d18e46e3110).
 
-Student: **[To be assigned]**
+Student: Andrea Lancini
 
 ---
 
