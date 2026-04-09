@@ -8,7 +8,7 @@ Student: Andrea Lancini
 
 # Brief Description
 
-This project focuses on using the Java version of [Esper](https://esper.espertech.com/release-9.0.0/reference-esperio/html_single/index.html#adapter_file) to process a data stream from a CSV file via EPL (Event Processing Language) queries. The primary dataset is the well-known [Bike Sharing Dataset](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset) from Washington (UCI). The goal is to implement a full streaming feature engineering pipeline ,including temporal transformations, lag features, rolling averages, and exponential moving averages, and then validate the pipeline's generalisability on a second, independent dataset.
+This project focuses on using the Java version of [Esper](https://esper.espertech.com/release-9.0.0/reference-esperio/html_single/index.html#adapter_file) to process a data stream from a CSV file via EPL (Event Processing Language) queries. The primary dataset is the well-known [Bike Sharing Dataset](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset) from Washington (UCI). The goal is to implement a full streaming feature engineering pipeline ,including temporal transformations, lag features, rolling averages, and exponential moving averages, and then validate the pipeline's generalisability on a second, independent dataset (e.g., the [Dutch Energy Generation dataset](https://www.kaggle.com/datasets/maxscheijen/dutch-energy-generation)).
 
 ---
 
