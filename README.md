@@ -8,7 +8,7 @@ Student: **[To be assigned]**
 
 # Brief Description
 
-This project focuses on using the Java version of [Esper](https://esper.espertech.com/release-9.0.0/reference-esperio/html_single/index.html#adapter_file) to process a data stream from a CSV file via EPL (Event Processing Language) queries. The primary dataset is the well-known [Bike Sharing Dataset](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset) from Washington (UCI). The goal is to implement a full streaming feature engineering pipeline — including temporal transformations, lag features, rolling averages, and exponential moving averages — and then validate the pipeline's generalisability on a second, independent dataset.
+This project focuses on using the Java version of [Esper](https://esper.espertech.com/release-9.0.0/reference-esperio/html_single/index.html#adapter_file) to process a data stream from a CSV file via EPL (Event Processing Language) queries. The primary dataset is the well-known [Bike Sharing Dataset](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset) from Washington (UCI). The goal is to implement a full streaming feature engineering pipeline ,including temporal transformations, lag features, rolling averages, and exponential moving averages, and then validate the pipeline's generalisability on a second, independent dataset.
 
 ---
 
@@ -19,8 +19,8 @@ This project focuses on using the Java version of [Esper](https://esper.espertec
 2. **Write EPL queries** to perform the following transformations on the Bike Sharing stream:
    - Remove the `instant` column;
    - Transform `dteday` into the derived temporal columns: `yr`, `season`, `mnth`, `hr`, `holiday`, `weekday`, `workingday`;
-   - Compute `atemp` from `temp` and `hum` using the [apparent temperature formula](https://en.wikipedia.org/wiki/Apparent_temperature) — the original `atemp` column in the dataset can be used to verify correctness;
-   - Compute `cnt` as `casual + registered` — the original `cnt` column can be used to verify correctness;
+   - Compute `atemp` from `temp` and `hum` using the [apparent temperature formula](https://en.wikipedia.org/wiki/Apparent_temperature)  (the original `atemp` column in the dataset can be used to verify correctness);
+   - Compute `cnt` as `casual + registered` ( the original `cnt` column can be used to verify correctness);
    - Add **lag features** for `casual`, `registered`, and `cnt` at lags -1, -24, and -168;
    - Add **rolling mean** features over the last 3, 6, 12, and 24 observations;
    - Add the **Exponential Moving Average (EMA)** of the lag -168 of `casual`, `registered`, and `cnt`.
