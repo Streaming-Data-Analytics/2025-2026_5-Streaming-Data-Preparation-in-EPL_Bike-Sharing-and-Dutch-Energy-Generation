@@ -15,7 +15,6 @@ import java.util.Map;
 
 public class EventProcessor {
     private File csvFile;
-    private String eventName;
     private Configuration configuration;
     private EPRuntime runtime;
     private EPStatement statement;
@@ -28,7 +27,6 @@ public class EventProcessor {
             System.out.println(e.getMessage());
         }
 
-        this.eventName = eventName;
         this.configuration = new Configuration();
         this.configuration.getCommon().addEventType(eventName, eventProperties);
         this.runtime = EPRuntimeProvider.getDefaultRuntime(this.configuration);
@@ -36,36 +34,6 @@ public class EventProcessor {
 
         this.configuration.getCommon().addImport("java.time.*");
 
-    }
-
-    //Change the configuration of the EP runtime
-    public void changeConfiguration(String eventName, Map<String, Object> eventProperties) {
-        this.eventName = eventName;
-        this.configuration = new Configuration();
-        this.configuration.getCommon().addEventType(eventName, eventProperties);
-        this.runtime = EPRuntimeProvider.getDefaultRuntime(this.configuration);
-    }
-
-    public Configuration getConfiguration() {
-        return configuration;
-    }
-
-    public EPRuntime getRuntime() {
-        return runtime;
-    }
-
-    public File getCsvFile() {
-        return csvFile;
-    }
-
-    public void setCsvFile(String filePath) {
-        File newFile;
-        try{
-            newFile = new File(filePath);
-            this.csvFile = newFile;
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
     }
 
     public EPStatement getStatement() {
@@ -95,11 +63,6 @@ public class EventProcessor {
         } catch (EPCompileException | EPDeployException e) {
             throw new RuntimeException("Failed to compile or deploy EPL: " + e.getMessage(), e);
         }
-    }
-
-    //Add a listener to the event stream to collect data
-    public void addListener(UpdateListener listener) {
-        statement.addListener(listener);
     }
 
     //Start the stream of events
