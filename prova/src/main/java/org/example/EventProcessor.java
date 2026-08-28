@@ -68,7 +68,7 @@ public class EventProcessor {
             throw new RuntimeException("Failed to compile or deploy EPL: " + e.getMessage(), e);
         }
     }
-    
+
     //Start the stream of events
     public void startStream(String name){
         (new CSVInputAdapter(runtime, new AdapterInputSource(csvFile), name)).start();
