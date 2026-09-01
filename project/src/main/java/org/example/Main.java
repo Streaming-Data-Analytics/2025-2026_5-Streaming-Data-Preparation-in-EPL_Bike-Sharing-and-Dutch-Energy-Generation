@@ -146,7 +146,7 @@ public class Main {
         bikeSharingProperties.put("cnt", Integer.class);
 
         //Create the Esper runtime through the class EventProcessor
-        EventProcessor ep = new EventProcessor("prova/data/bike_sharing/hour.csv", "BikeSharingEvent", bikeSharingProperties);
+        EventProcessor ep = new EventProcessor("project/data/bike_sharing/hour.csv", "BikeSharingEvent", bikeSharingProperties);
 
         //Import the needed custom functions
         ep.getConfiguration().getCompiler().addPlugInSingleRowFunction(
@@ -314,7 +314,7 @@ public class Main {
         dutchEnergyProperties.put("Wind Onshore", String.class);
 
         //Create the Esper runtime through the class EventProcessor
-        EventProcessor ep = new EventProcessor("prova/data/dutch-energy/dutch-energy.csv", "DutchEnergyEvent", dutchEnergyProperties);
+        EventProcessor ep = new EventProcessor("project/data/dutch-energy/dutch-energy.csv", "DutchEnergyEvent", dutchEnergyProperties);
 
         //Import the needed custom functions
         ep.getConfiguration().getCompiler().addPlugInSingleRowFunction(
