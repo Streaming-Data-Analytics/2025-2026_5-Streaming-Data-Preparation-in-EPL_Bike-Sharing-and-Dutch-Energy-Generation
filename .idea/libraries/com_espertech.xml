@@ -1,0 +1,48 @@
+<component name="libraryTable">
+  <library name="com.espertech">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/doc/javadoc-esper" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/doc/javadoc-esperio" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/autoid/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/autoid/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/benchmark/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/cycledetect/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/cycledetect/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/marketdatafeed/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/marketdatafeed/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/matchmaker/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/matchmaker/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/namedwinquery/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/namedwinquery/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/ohlcpluginview/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/ohlcpluginview/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/qos_sla/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/qos_sla/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/rfidassetzone/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/rfidassetzone/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/runtimeconfig/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/runtimeconfig/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/servershell/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/stockticker/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/stockticker/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/terminalsvc-jse/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/terminalsvc/terminalsvc-common/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/terminalsvc/terminalsvc-mdb/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/terminalsvc/terminalsvc-mdb/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/terminalsvc/terminalsvc-receiver/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/terminalsvc/terminalsvc-sender/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/transaction/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/transaction/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/trivia/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/trivia/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/virtualdw/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0/examples/virtualdw/src/test/java" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/esper-9.0.0/esper-9.0.0" recursive="false" />
+  </library>
+</component>
