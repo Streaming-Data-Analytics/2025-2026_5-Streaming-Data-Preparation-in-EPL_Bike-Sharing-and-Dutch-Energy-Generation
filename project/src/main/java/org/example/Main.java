@@ -254,17 +254,18 @@ public class Main {
         System.out.println("alpha = " + alpha);
         queries_pipeline.append("CREATE VARIABLE double globalEmaCount = 0.0;" +
                 "CREATE VARIABLE double globalEmaCasual = 0.0;" +
-                "CREATE VARIABLE double globalEmaRegistered = 0.0;");
+                "CREATE VARIABLE double globalEmaRegistered = 0.0;" +
+                "CREATE VARIABLE double alpha = "+alpha+";");
 
         queries_pipeline.append( "INSERT INTO FinalStream " +
-                "SELECT *, (count*"+alpha+") + (globalEmaCount*(1-"+alpha+")) AS count_ema_168, " +
-                "(casual*"+alpha+") + (globalEmaCasual*(1-"+alpha+")) AS casual_ema_168, " +
-                "(registered*"+alpha+") + (globalEmaRegistered*(1-"+alpha+")) AS registered_ema_168 " +
+                "SELECT *, (count*alpha) + (globalEmaCount*(1-alpha)) AS count_ema_168, " +
+                "(casual*alpha) + (globalEmaCasual*(1-alpha)) AS casual_ema_168, " +
+                "(registered*alpha) + (globalEmaRegistered*(1-alpha)) AS registered_ema_168 " +
                 "FROM WithRM24; ");
         queries_pipeline.append("ON WithATemp SET " +
-                "globalEmaCount = (count*"+alpha+") + (globalEmaCount*(1-"+alpha+")), " +
-                "globalEmaCasual = (casual*"+alpha+") + (globalEmaCasual*(1-"+alpha+")), " +
-                "globalEmaRegistered = (registered*"+alpha+") + (globalEmaRegistered*(1-"+alpha+"));");
+                "globalEmaCount = (count*alpha) + (globalEmaCount*(1-alpha)), " +
+                "globalEmaCasual = (casual*alpha) + (globalEmaCasual*(1-alpha)), " +
+                "globalEmaRegistered = (registered*alpha) + (globalEmaRegistered*(1-alpha));");
 
         //Step 8: select the field to extract from the final stream
         queries_pipeline.append("SELECT * FROM FinalStream;");
@@ -431,11 +432,12 @@ public class Main {
         double alpha = 2.0 / (1.0 + 672.0);
         System.out.println("alpha = " + alpha);
         queries_pipeline.append("CREATE VARIABLE double globalEmaTotalFossil = 0.0;");
+        queries_pipeline.append("CREATE VARIABLE double alpha ="+alpha+";");
 
         queries_pipeline.append( "INSERT INTO FinalStream " +
-                "SELECT *, (total_fossil*"+alpha+") + (globalEmaTotalFossil*(1-"+alpha+")) AS total_fossil_ema_672 " +
+                "SELECT *, (total_fossil*alpha) + (globalEmaTotalFossil*(1-alpha)) AS total_fossil_ema_672 " +
                 " FROM WithRM96; ");
-        queries_pipeline.append("ON WithRM96 SET globalEmaTotalFossil = (total_fossil*"+alpha+") + (globalEmaTotalFossil*(1-"+alpha+"));");
+        queries_pipeline.append("ON WithRM96 SET globalEmaTotalFossil = (total_fossil*alpha) + (globalEmaTotalFossil*(1-alpha));");
 
         //Step 8: select the field to extract from the final stream
         queries_pipeline.append(
@@ -459,7 +461,7 @@ public class Main {
     }
 
     //Change this variable to chose which dataset to use
-    static final int dataset = 1;
+    static final int dataset = 0;
     static void main() {
         if(dataset==0) {
             BikeSharing();
