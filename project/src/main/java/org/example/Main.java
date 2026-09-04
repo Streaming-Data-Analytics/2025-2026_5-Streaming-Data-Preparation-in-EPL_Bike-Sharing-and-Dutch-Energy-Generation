@@ -26,16 +26,12 @@ public class Main {
 
     static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     public static int getYearDE(String date){
-        switch(LocalDate.parse(date, formatter).getYear()){
-            case 2022:
-                return 0;
-            case 2023:
-                return 1;
-            case 2024:
-                return 2;
-            default:
-                return -1;
-        }
+        return switch (LocalDate.parse(date, formatter).getYear()) {
+            case 2022 -> 0;
+            case 2023 -> 1;
+            case 2024 -> 2;
+            default -> -1;
+        };
 
     }
 
@@ -73,19 +69,7 @@ public class Main {
     }
 
     public static int getSeasonDE(String date){
-        LocalDateTime d = LocalDateTime.parse(date, formatter);
-        int month = d.getMonthValue();
-        int day = d.getDayOfMonth();
-
-        if ((month == 12 && day >= 21) || month == 1 || month == 2 || (month == 3 && day < 21)) {
-            return 1;
-        } else if ((month == 3 && day >= 21) || month == 4 || month == 5 || (month == 6 && day < 21)) {
-            return 2;
-        } else if ((month == 6 && day >= 21) || month == 7 || month == 8 || (month == 9 && day < 23)) {
-            return 3;
-        } else {
-            return 4;
-        }
+        return getSeason(date.substring(0, 10));
     }
 
     //Determines whether a day is a holiday or not.
@@ -117,7 +101,7 @@ public class Main {
     }
 
     public static double parseDouble( String n){
-        if(n.isEmpty() || n == null)
+        if(n.isEmpty())
             return 0.0;
         return Double.parseDouble(n);
     }
@@ -251,7 +235,6 @@ public class Main {
 
         //Step 7: add EMA with lag 168
         double alpha = 2.0 / (1.0 + 168.0);
-        System.out.println("alpha = " + alpha);
         queries_pipeline.append("CREATE VARIABLE double globalEmaCount = 0.0;" +
                 "CREATE VARIABLE double globalEmaCasual = 0.0;" +
                 "CREATE VARIABLE double globalEmaRegistered = 0.0;" +
@@ -276,14 +259,14 @@ public class Main {
         //Add a listener to collect and print the events of the final stream
         ep.getStatement().addListener((newData, _,_,_) -> {
             if(newData!=null){
-                System.out.println(newData[0].getUnderlying());
+                IO.println(newData[0].getUnderlying());
             }else{
-                System.out.println("No data has been found!");
+                IO.println("No data has been found!");
             }
         });
 
         //Start the stream of events
-        ep.startStream("BikeSharingEvent");
+        ep.startStream();
 
     }
 
@@ -430,7 +413,6 @@ public class Main {
 
         //Step 5: add EMA with lag 672 (1 week)
         double alpha = 2.0 / (1.0 + 672.0);
-        System.out.println("alpha = " + alpha);
         queries_pipeline.append("CREATE VARIABLE double globalEmaTotalFossil = 0.0;");
         queries_pipeline.append("CREATE VARIABLE double alpha ="+alpha+";");
 
@@ -450,18 +432,18 @@ public class Main {
         //Add a listener to collect and print the events of the final stream
         ep.getStatement().addListener((newData, _,_,_) -> {
             if(newData!=null){
-                System.out.println(newData[0].getUnderlying());
+                IO.println(newData[0].getUnderlying());
             }else{
-                System.out.println("No data has been found!");
+                IO.println("No data has been found!");
             }
         });
 
         //Start the stream of events
-        ep.startStream("DutchEnergyEvent");
+        ep.startStream();
     }
 
     //Change this variable to chose which dataset to use
-    static final int dataset = 0;
+    static final int dataset = 1;
     static void main() {
         if(dataset==0) {
             BikeSharing();

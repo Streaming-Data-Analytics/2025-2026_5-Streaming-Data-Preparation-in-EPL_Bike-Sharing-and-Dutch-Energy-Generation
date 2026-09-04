@@ -18,6 +18,7 @@ public class EventProcessor {
     private Configuration configuration;
     private EPRuntime runtime;
     private EPStatement statement;
+    private String eventName;
 
     //Initialize the Event Processing Runtime using the filepath and the structure of the event
     public EventProcessor(String filePath, String eventName, Map<String, Object> eventProperties) {
@@ -33,7 +34,7 @@ public class EventProcessor {
         this.statement = null;
 
         this.configuration.getCommon().addImport("java.time.*");
-
+        this.eventName = eventName;
     }
 
     public Configuration getConfiguration() {
@@ -70,7 +71,7 @@ public class EventProcessor {
     }
 
     //Start the stream of events
-    public void startStream(String name){
-        (new CSVInputAdapter(runtime, new AdapterInputSource(csvFile), name)).start();
+    public void startStream(){
+        (new CSVInputAdapter(runtime, new AdapterInputSource(csvFile), this.eventName)).start();
     }
 }
